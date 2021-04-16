@@ -1,5 +1,5 @@
 " うまく環境構築できなかった場合は、以下のコマンドを実行
-" :call dein#recache_runtimepath(
+" :call dein#recache_runtimepath()
 
 " 起動時Replaceモードになるのを防ぐ
 set t_u7=
@@ -106,11 +106,11 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " dein.vimが存在していない場合はgithubからclone
 if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-      execute curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > s:dein_dir . '/installer.sh'
-      execute sh s:dein_dir . '/installer.sh' s:dein_dir
-    endif
-        execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim'
+    s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
 if dein#load_state(s:dein_dir)
