@@ -1,0 +1,47 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]] # syntax highlight of kotlin
+repo = 'udalov/kotlin-vim'
+
+[[plugins]] 
+repo = 'kana/vim-submode'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]] # カラースキーマ
+repo = 'jacoborus/tender.vim'
+
+[[plugins]] # カラースキーム
+repo = 'nattoujam/kokuban.vim'
+
+[[plugins]]
+repo = 'vim-scripts/twilight'
+
+[[plugins]] # toggle comment out
+repo = 'tyru/caw.vim'
+
+[[plugins]] # auto okoru
+repo = 'dense-analysis/ale'
+
+[[plugins]] # new status line
+repo = 'itchyny/lightline.vim'
+
+[[plugins]] # show git branch name
+repo = 'itchyny/vim-gitbranch'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]] # vimfiler
+repo = 'Shougo/vimfiler'
+
+[[plugins]] # vim doc in Ja
+repo = 'vim-jp/vimdoc-ja'
