@@ -1,4 +1,6 @@
 #!/bin/sh
+cd `dirname $0`
+echo $0
 unlink ~/.vimrc
 unlink ~/.config/vim
 
