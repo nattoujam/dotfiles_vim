@@ -16,6 +16,7 @@ set helplang=ja,en
 autocmd BufNewFile,BufRead *.launch set filetype=xml
 
 " -----key config-----
+"  {{{
 nnoremap s <C-w>
 
 " HOME and END
@@ -46,14 +47,7 @@ nnoremap <Left> gT
 tnoremap <C-n> <C-W>N
 
 nnoremap Q <Nop>
-
-" --- Encoding ---
-set fenc=utf-8
-set encoding=utf-8
-set fileformat=unix
-
-" clipboard
-set clipboard=unnamedplus
+" }}}
 
 set nobackup
 set autoread
@@ -63,6 +57,15 @@ set shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
 set nowrap "折り返ししない
+set foldmethod=marker
+
+" --- Encoding ---
+set fenc=utf-8
+set encoding=utf-8
+set fileformat=unix
+
+" clipboard
+set clipboard=unnamedplus
 
 "折り返ししないで横スクロール
 set sidescroll=2    "スクロール幅
@@ -94,6 +97,7 @@ filetype plugin on
 
 
 " ----------dein----------
+"  {{{
 if &compatible
   set nocompatible
   endif
@@ -134,8 +138,10 @@ filetype plugin indent on
 if dein#check_install()
   call dein#install()
 endif
+" }}}
 
 " ----------vim-submode----------
+"  {{{
 call submode#enter_with('term_size', 'n', '', '<C-w>>', '<C-w>>')
 call submode#enter_with('term_size', 'n', '', '<C-w><', '<C-w><')
 call submode#map('term_size', 'n', '', '>', '<C-w>>')
@@ -145,6 +151,7 @@ call submode#enter_with('tab', 'n', '', 'gt', 'gt')
 call submode#enter_with('tab', 'n', '', 'gT', 'gT')
 call submode#map('tab', 'n', '', 't', 'gt')
 call submode#map('tab', 'n', '', 'T', 'gT')
+" }}}
 
 " ----- .vimrc の分割先を参照 -----
 set runtimepath+=~/.config/vim
