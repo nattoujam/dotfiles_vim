@@ -10,8 +10,15 @@ function s:DeleteLeft(curpos)
     if (a:curpos[1] > 1)
       let l:current_indent = strlen(l:left)
       let l:above_indent = strlen(matchstr(getline(a:curpos[1] - 1), '^ *'))
+      redir => l:sts
+      silent set softtabstop?
+      redir END
+      let l:softtabstop = matchstr(l:sts, '\d')
+      if (l:softtabstop == 0)
+        let l:softtabstop = 1
+      endif
       if (l:current_indent > l:above_indent)
-        return repeat("\<C-h>", l:current_indent - l:above_indent)
+        return repeat("\<C-h>", (l:current_indent - l:above_indent)/l:softtabstop)
       endif
       return "\<C-w>"
     endif
