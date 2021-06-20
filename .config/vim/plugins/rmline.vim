@@ -18,7 +18,11 @@ function s:DeleteLeft(curpos)
         let l:softtabstop = 1
       endif
       if (l:current_indent > l:above_indent)
-        return repeat("\<C-h>", (l:current_indent - l:above_indent)/l:softtabstop)
+        let l:spaces = l:current_indent - l:above_indent
+        if (l:spaces >= l:softtabstop)
+          let l:spaces =  l:spaces / l:softtabstop
+        endif
+        return repeat("\<C-h>", l:spaces)
       endif
       return "\<C-w>"
     endif
