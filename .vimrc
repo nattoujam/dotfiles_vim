@@ -49,7 +49,7 @@ tnoremap <C-n> <C-W>N
 nnoremap Q <Nop>
 
 " 直近の検索ハイライトを解除する
-nnoremap <ESC> :noh<CR>
+nnoremap <C-e> :noh<CR>
 " }}}
 
 set nobackup
