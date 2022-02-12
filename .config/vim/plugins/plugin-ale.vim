@@ -1,6 +1,6 @@
 let g:ale_linters = {
       \ 'ruby': ['rubocop'],
-      \ 'python': ['flake8', 'pyls'],
+      \ 'python': ['flake8', 'pyls', 'mypy'],
       \}
 
 let g:ale_python_flake8_options = "--ignore=E501"
