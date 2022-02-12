@@ -45,3 +45,13 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]] # vim doc in Ja
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]] # add header easily
+repo = 'alpertuna/vim-header'
+hook_add = '''
+  let g:header_field_timestamp_format = '%Y %m/%d'
+  map <F4> :AddHeader<CR>
+'''

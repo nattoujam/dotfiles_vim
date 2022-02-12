@@ -103,7 +103,7 @@ filetype plugin on
 "  {{{
 if &compatible
   set nocompatible
-  endif
+endif
 
 " # dein.vimインストール時に指定したディレクトリをセット
 let s:dein_dir = expand('~/.cache/dein')
