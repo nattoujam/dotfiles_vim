@@ -12,3 +12,5 @@ ln -s $path/.vimrc ~/
 echo "link $path/.config/vim to home directory"
 mkdir -p ~/.config/
 ln -s $path/.config/vim ~/.config/
+
+mkdir -p ~/.config/vim/private

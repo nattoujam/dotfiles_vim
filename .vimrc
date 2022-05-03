@@ -160,3 +160,4 @@ call submode#map('tab', 'n', '', 'T', 'gT')
 set runtimepath+=~/.config/vim
 runtime! init/*.vim
 runtime! plugins/*.vim
+runtime! private/*.vim
