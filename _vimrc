@@ -7,6 +7,7 @@ set t_RV=
 
 " no sound
 set visualbell t_vb=
+set belloff=all
 
 " vim doc の優先順位
 set helplang=ja,en
@@ -101,46 +102,48 @@ filetype plugin on
 
 " ----------dein----------
 "  {{{
+"dein Scripts-----------------------------
 if &compatible
   set nocompatible
 endif
-
-" # dein.vimインストール時に指定したディレクトリをセット
-let s:dein_dir = expand('~/.cache/dein')
-
-" # dein.vimの実体があるディレクトリをセット
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-
-" dein.vimが存在していない場合はgithubからclone
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  " plugin
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
   endif
-  execute 'set runtimepath^=' . s:dein_repo_dir
-endif
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  " # dein.toml, dein_layz.tomlファイルのディレクトリをセット
-    let s:toml_dir = expand('~/.config/vim')
-
-  " # 起動時に読み込むプラグイン群
-    call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-
-  " # 遅延読み込みしたいプラグイン群
-    call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+  " Your plugin
+  " .vimがいるやつと、つけたらダメなやつがあるので注意
+  call dein#add('preservim/nerdtree')
+  call dein#add('kana/vim-submode')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('tpope/vim-surround')
+  call dein#add('jacoborus/tender')
+  call dein#add('nattoujam/kokuban')
+  call dein#add('tyru/caw.vim')
+  call dein#add('dense-analysis/ale')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('itchyny/vim-gitbranch')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimfiler')
+  call dein#add('alpertuna/vim-header')
 
   call dein#end()
   call dein#save_state()
 endif
-
+" 文字化けする場合はエンコードの設定をここに入れる。
 filetype plugin indent on
-
+syntax enable
 " If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
+"End dein Scripts-------------------------
 " }}}
 
 " ----------vim-submode----------
@@ -156,8 +159,14 @@ call submode#map('tab', 'n', '', 't', 'gt')
 call submode#map('tab', 'n', '', 'T', 'gT')
 " }}}
 
+" ----------vim-header-----------
+"  {{{
+let g:header_field_timestamp_format = '%Y %m/%d'
+map <F4> :AddHeader<CR>
+" }}}
+
 " ----- .vimrc の分割先を参照 -----
-set runtimepath+=~/.config/vim
+set runtimepath+=~/dotfs_vim/.config/vim
 runtime! init/*.vim
 runtime! plugins/*.vim
 runtime! private/*.vim
