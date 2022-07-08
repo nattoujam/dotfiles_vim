@@ -69,7 +69,7 @@ set encoding=utf-8
 set fileformat=unix
 
 " clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed, autoselect
 
 "折り返ししないで横スクロール
 set sidescroll=2    "スクロール幅
