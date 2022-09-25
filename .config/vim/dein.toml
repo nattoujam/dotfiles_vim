@@ -55,3 +55,6 @@ hook_add = '''
   let g:header_field_timestamp_format = '%Y %m/%d'
   map <F4> :AddHeader<CR>
 '''
+
+[[plugins]] # Dockerfile syntax
+repo = 'ekalinin/Dockerfile.vim'

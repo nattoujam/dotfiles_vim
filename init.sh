@@ -14,3 +14,7 @@ mkdir -p ~/.config/
 ln -s $path/.config/vim ~/.config/
 
 mkdir -p ~/.config/vim/private
+
+# install python tool
+python3 -m pip install -r $path/requirements.txt
+
