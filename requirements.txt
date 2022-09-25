@@ -1,4 +1,3 @@
 flake8
-flake8-import-order
 isort
 autopep8
