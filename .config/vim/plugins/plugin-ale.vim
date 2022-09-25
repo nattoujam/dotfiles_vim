@@ -8,6 +8,7 @@ let g:ale_fixers = {
       \ }
 
 let g:ale_python_flake8_options = "--ignore=E501"
+let g:ale_python_autopep8_options = "--max-line-length 120"
 
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enebled = 1
