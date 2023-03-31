@@ -13,6 +13,8 @@ let g:ale_python_autopep8_options = "--max-line-length 120"
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enebled = 1
 
+let g:ale_python_auto_poetry = 1
+
 " 各ツールで使うpythonのパス固定
 " let g:ale_python_flake8_executable = g:python3_host_prog
 " let g:ale_python_flake8_options = '-m flake8'
