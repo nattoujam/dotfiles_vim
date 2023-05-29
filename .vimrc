@@ -20,10 +20,10 @@ autocmd BufNewFile,BufRead *.launch set filetype=xml
 nnoremap s <C-w>
 
 " HOME and END
-nnoremap <S-l> <S-$>
-vnoremap <S-l> <S-$>
-nnoremap <S-h> <S-^>
-vnoremap <S-h> <S-^>
+nnoremap <S-l> $
+vnoremap <S-l> $
+nnoremap <S-h> ^
+vnoremap <S-h> ^
 
 " move Word unit
 nnoremap <C-l> e
@@ -47,6 +47,8 @@ nnoremap <Left> gT
 tnoremap <C-n> <C-W>N
 
 nnoremap Q <Nop>
+nnoremap <S-j> <Nop>
+nnoremap <S-k> <Nop>
 
 " 直近の検索ハイライトを解除する
 nnoremap <C-e> :noh<CR>
